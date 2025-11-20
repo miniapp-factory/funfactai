@@ -22,8 +22,9 @@ export default function RandomFact() {
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       setFact({ id: data.id, text: data.text });
-    } catch (e: any) {
-      setError(e.message ?? "Unknown error");
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
+      setError(message);
     } finally {
       setLoading(false);
     }

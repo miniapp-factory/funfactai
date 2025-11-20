@@ -93,6 +93,7 @@ export function Share({ text }: { text: string }) {
               <svg
                 viewBox="0 0 1200 1227"
                 xmlns="http://www.w3.org/2000/svg"
+                <!-- eslint-disable-next-line jsx-a11y/role-supports-aria-props -->
                 aria-hidden="true"
                 role="none"
                 className="size-6"
